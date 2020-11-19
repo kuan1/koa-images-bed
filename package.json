@@ -1,0 +1,30 @@
+{
+  "name": "koa-images-bed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuan1/koa-images-bed.git"
+  },
+  "keywords": [],
+  "author": "kuan1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuan1/koa-images-bed/issues"
+  },
+  "homepage": "https://github.com/kuan1/koa-images-bed#readme",
+  "dependencies": {
+    "@luzhongk/node-ding": "^1.1.2",
+    "@luzhongk/node-logger": "^1.1.1",
+    "chalk": "^4.1.0",
+    "koa": "^2.13.0",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
+    "lodash": "^4.17.20"
+  }
+}
