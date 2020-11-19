@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "name": "koa-image-bed",
+      "script": "src/index.js",
+      "instances": 1,
+      "exec_mode": "fork",
+      "node_args": "--harmony",
+      "watch": true,
+      "max_memory_restart": "700M",
+      "ignore_watch": [".git", "./node_modules", "./static"],
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 9301
+      }
+    }
+  ]
+}
