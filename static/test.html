@@ -26,10 +26,12 @@
     document.querySelector('.upload-btn').onclick = uploadFile
 
     async function fetchList() {
-      const { data } = await axios({
-        url: '/api/images/upload'
+      const { data: { data = {} } } = await axios({
+        url: '/api/images/upload',
+        params: { page: 1, size: 5 }
       })
-      console.log(data)
+      console.log(data.cached ? '缓存：' : '查询：')
+      console.log(data.total, data.list)
     }
 
     async function removeFile() {
