@@ -22,6 +22,7 @@
     "@luzhongk/node-ding": "^1.1.2",
     "@luzhongk/node-logger": "^1.1.1",
     "chalk": "^4.1.0",
+    "fs-extra": "^9.0.1",
     "koa": "^2.13.0",
     "koa-router": "^10.0.0",
     "koa-static": "^5.0.0",
