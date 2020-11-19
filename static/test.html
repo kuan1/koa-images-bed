@@ -38,9 +38,10 @@
       const name = document.querySelector('.file-name').value
       const { data } = await axios({
         url: '/api/images/upload',
-        method: 'delete'
+        method: 'delete',
+        params: { names: name }
       })
-      console.log(data)
+      console.log(data.data)
     }
 
     async function uploadFile() {
