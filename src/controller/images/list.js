@@ -38,7 +38,7 @@ async function list(ctx) {
     const res = await fs.readdir(imagesPath)
     const infos = await getFilesInfo(res)
     limitFileAmount(infos)
-    images = infos.map((item) => item.name)
+    images = infos.map((item) => `https://www.luzhongkuan.cn/static/images/${item.name}`)
     cache.set(images)
   }
 
