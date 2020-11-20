@@ -7,4 +7,5 @@ module.exports = {
   tempPath: isDev ? path.resolve(__dirname, '../__temp') : '/var/www/static/temp',
   maxAmount: isDev ? 10 : 1000,
   prefix: 'https://www.luzhongkuan.cn/static/images/',
+  tempPrefix: 'https://www.luzhongkuan.cn/static/temp/',
 }

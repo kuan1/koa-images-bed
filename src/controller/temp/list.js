@@ -38,7 +38,10 @@ async function list(ctx) {
     const res = await fs.readdir(tempPath)
     const infos = await getFilesInfo(res)
     limitFileAmount(infos)
-    images = formatImages(infos.map((item) => item.name))
+    images = formatImages(
+      infos.map((item) => item.name),
+      true
+    )
     cache.temp.set(images)
   }
 

@@ -1,5 +1,5 @@
-const { prefix } = require('../config')
+const { prefix, tempPrefix } = require('../config')
 
-exports.formatImages = function formatImages(list) {
-  return list.map((name) => `${prefix}${name}`)
+exports.formatImages = function formatImages(list = [], isTemp = false) {
+  return list.map((name) => `${isTemp ? tempPrefix : prefix}${name}`)
 }
