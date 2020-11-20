@@ -9,3 +9,7 @@ export function getImages() {
   const res = await fs.readdir(imagesPath)
   return res
 }
+
+export function formatImages(list) {
+  return list.map((name) => `https://www.luzhongkuan.cn/static/images/${name}`)
+}

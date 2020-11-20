@@ -3,7 +3,7 @@ const fs = require('fs-extra')
 const cache = require('../../utils/cache')
 const { imagesPath } = require('../../config')
 const config = require('../../config')
-const { info } = require('console')
+const { formatImages } = require('../../utils/util')
 
 async function getFilesInfo(paths) {
   const res = []
@@ -38,7 +38,7 @@ async function list(ctx) {
     const res = await fs.readdir(imagesPath)
     const infos = await getFilesInfo(res)
     limitFileAmount(infos)
-    images = infos.map((item) => `https://www.luzhongkuan.cn/static/images/${item.name}`)
+    images = formatImages(infos.map((item) => item.name))
     cache.set(images)
   }
 
