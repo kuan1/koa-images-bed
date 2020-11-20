@@ -27,7 +27,7 @@
 
     async function fetchList() {
       const { data: { data = {} } } = await axios({
-        url: '/api/images/upload',
+        url: '/api/upload/temp',
         params: { page: 1, size: 5 }
       })
       console.log(data.cached ? '缓存：' : '查询：')
@@ -37,7 +37,7 @@
     async function removeFile() {
       const name = document.querySelector('.file-name').value
       const { data } = await axios({
-        url: '/api/images/upload',
+        url: '/api/upload/temp',
         method: 'delete',
         params: { names: name }
       })
@@ -52,7 +52,7 @@
         fd.append('file', files[i])
       }
       const { data } = await axios({
-        url: '/api/images/upload',
+        url: '/api/upload/temp',
         method: 'post',
         data: fd
       })

@@ -5,16 +5,16 @@ const cache = require('../../utils/cache')
 const { formatImages } = require('../../utils/util')
 
 async function save(file) {
-  const suffix = `.${file.type.split('/')[1] || 'png'}`.repeat('jpeg', 'jpg')
+  const suffix = `.${file.type.split('/')[1] || 'png'}`
   const newName = file.hash + suffix
-  await fs.rename(file.path, path.resolve(config.imagesPath, newName))
+  await fs.rename(file.path, path.resolve(config.tempPath, newName))
   return newName
 }
 
 async function upload(ctx) {
   const { file } = ctx.request.files
-  await fs.ensureDir(config.imagesPath)
   let res = []
+  await fs.ensureDir(config.tempPath)
   if (Array.isArray(file)) {
     res = await Promise.all(file.map((item) => save(item)))
   } else {
@@ -22,7 +22,7 @@ async function upload(ctx) {
     res.push(name)
   }
   ctx.state.data = formatImages(res)
-  cache.images.clear()
+  cache.temp.clear()
 }
 
 module.exports = upload

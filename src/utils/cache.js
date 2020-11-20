@@ -1,38 +1,42 @@
-/**
- * 一个简单缓存
- */
+function createCache() {
+  /**
+   * 一个简单缓存
+   */
 
-let cache = []
+  let cache = []
 
-/**
- * 获取缓存
- */
-function getCache() {
-  if (cache.length) return cache
-  setTimeout(() => {
+  /**
+   * 获取缓存
+   */
+  function getCache() {
+    if (cache.length) return cache
+    setTimeout(() => {
+      cache = []
+    }, 2000)
+  }
+
+  /**
+   * 清空缓存
+   */
+  function clearCache() {
     cache = []
-  }, 2000)
-}
+  }
 
-/**
- * 清空缓存
- */
-function clearCache() {
-  cache = []
-}
-
-/**
- * 设置列表缓存
- * @param {Array} newCache
- */
-function setCache(newCache) {
-  if (Array.isArray(newCache)) {
-    cache = newCache
+  /**
+   * 设置列表缓存
+   * @param {Array} newCache
+   */
+  function setCache(newCache) {
+    if (Array.isArray(newCache)) {
+      cache = newCache
+    }
+  }
+  return {
+    get: getCache,
+    set: setCache,
+    clear: clearCache,
   }
 }
 
-module.exports = {
-  get: getCache,
-  set: setCache,
-  clear: clearCache,
-}
+exports.images = createCache()
+exports.temp = createCache()
