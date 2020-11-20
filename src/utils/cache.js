@@ -33,6 +33,6 @@ function setCache(newCache) {
 
 module.exports = {
   get: getCache,
-  clear: clearCache,
   set: setCache,
+  clear: clearCache,
 }

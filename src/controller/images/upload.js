@@ -1,6 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 const config = require('../../config')
+const cache = require('../../utils/cache')
 
 async function save(file) {
   const newName = file.hash + file.name.substr(file.name.lastIndexOf('.'))
@@ -15,6 +16,7 @@ async function upload(ctx) {
     save(file)
   }
   ctx.state.data = '上传成功'
+  cache.clear()
 }
 
 module.exports = upload

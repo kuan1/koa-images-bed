@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs-extra')
 const config = require('../../config')
+const cache = require('../../utils/cache')
 
 async function remove(ctx) {
   const { names } = ctx.request.query
@@ -13,6 +14,7 @@ async function remove(ctx) {
     }
   }
   ctx.state.data = namesArr
+  cache.clear()
 }
 
 module.exports = remove
