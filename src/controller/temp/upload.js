@@ -21,7 +21,7 @@ async function upload(ctx) {
     name = await save(file)
     res.push(name)
   }
-  ctx.state.data = formatImages(res)
+  ctx.state.data = formatImages(res, true)
   cache.temp.clear()
 }
 
