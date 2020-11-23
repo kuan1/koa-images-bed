@@ -3,7 +3,7 @@ const koaBody = require('koa-body')
 const controller = require('../controller')
 const config = require('../config')
 
-const FOUR_M = 20 * 1024 * 1024
+const FOUR_M = 5 * 1024 * 1024
 
 const bodyOptions = {
   multipart: true,
