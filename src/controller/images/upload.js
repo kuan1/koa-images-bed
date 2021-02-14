@@ -5,7 +5,7 @@ const cache = require('../../utils/cache')
 const { formatImages } = require('../../utils/util')
 
 async function save(file) {
-  const suffix = `.${file.type.split('/')[1] || 'png'}`.repeat('jpeg', 'jpg')
+  const suffix = `.${file.type.split('/')[1] || 'png'}`.replace('jpeg', 'jpg')
   const newName = file.hash + suffix
   await fs.rename(file.path, path.resolve(config.imagesPath, newName))
   return newName
